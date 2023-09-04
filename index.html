@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <script type="module">
+        const module = await import('./pkg/qr.js');
+        await module.default();
+
+        document.body.setAttribute('style', 'all: unset;display: flex;justify-content: center;');
+        document.body.innerHTML = module.qrcode('a', 2, 'L');
+        document.body.lastChild.setAttribute('width', '');
+        document.body.lastChild.setAttribute('height', '100vh');
+    </script>
+</body>
+</html>
